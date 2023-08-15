@@ -6,11 +6,21 @@ namespace Wpf3DApp.ViewModels
 {
     public partial class ContentViewModel : ObservableObject
     {
+
         [ObservableProperty]
         public string welcomeString = "HELLO FROM CONTENT VIEW!";
 
         [ObservableProperty]
-        public string axisRotation = "2 0 0";
+        public string axisRotation;
+
+        [ObservableProperty]
+        public int xAxisValue;
+
+        [ObservableProperty]
+        public int yAxisValue;
+
+        [ObservableProperty]
+        public int zAxisValue;
 
         [ObservableProperty]
         public List<string> axisItemsSource;
@@ -32,6 +42,26 @@ namespace Wpf3DApp.ViewModels
                 "1 1 1"
             };
             SelectedAxis = AxisItemsSource.First();
+        }
+
+        partial void OnXAxisValueChanged(int value)
+        {
+            UpdateAxisRotation();
+        }
+
+        partial void OnYAxisValueChanged(int value)
+        {
+            UpdateAxisRotation();
+        }
+
+        partial void OnZAxisValueChanged(int value)
+        {
+            UpdateAxisRotation();
+        }
+
+        private void UpdateAxisRotation()
+        {
+            AxisRotation = $"{XAxisValue} {YAxisValue} {ZAxisValue}";
         }
 
         partial void OnSelectedAxisChanged(string value)

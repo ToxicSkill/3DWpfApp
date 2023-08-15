@@ -60,14 +60,14 @@
             </ModelVisual3D>
         </Viewport3D>
         <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
-            <Slider VerticalAlignment="Top" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+            <Slider VerticalAlignment="Top" HorizontalAlignment="Stretch" Minimum="-360" Maximum = "360"  Interval="1" Value = "{Binding ElementName = rotate, Path=Angle}" />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="X" FontSize="32"/>
-                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Minimum="-4" Maximum="4" IsSnapToTickEnabled="True" Interval="1"  Value = "{Binding XAxisValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -75,7 +75,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Y" FontSize="32"/>
-                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Minimum="-4" Maximum="4" IsSnapToTickEnabled="True" Interval="1"  Value = "{Binding YAxisValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -83,12 +83,12 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Z" FontSize="32"/>
-                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch"  Minimum="-4" Maximum="4" IsSnapToTickEnabled="True" Interval="1"  Value = "{Binding ZAxisValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
-            <ComboBox Grid.Column="1" Grid.Row="1" Margin="0,30" Width="200" 
+            <!--<ComboBox Grid.Column="1" Grid.Row="1" Margin="0,30" Width="200" 
                   ItemsSource="{Binding AxisItemsSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                   SelectedItem="{Binding SelectedAxis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                  VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+                  VerticalAlignment="Top" HorizontalAlignment="Stretch"/>-->
 
         </StackPanel>
 
