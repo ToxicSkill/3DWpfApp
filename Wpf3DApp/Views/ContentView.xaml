@@ -6,19 +6,12 @@
             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" 
            xmlns:viewmodels="clr-namespace:Wpf3DApp.ViewModels" 
            d:DataContext="{d:DesignInstance Type=viewmodels:ContentViewModel}"
-             xmlns:models="clr-namespace:Wpf3DApp.Models"  
             Title="Dashboard"
             mc:Ignorable="d" 
             d:DesignHeight="450" d:DesignWidth="800">
     
     <Grid VerticalAlignment="Stretch" 
-             HorizontalAlignment="Stretch" x:Name="Grid1">
-        <Grid.Resources>
-            <models:BigPlanet x:Key="SphereGeometrySource1"/>
-            <MeshGeometry3D x:Key="SphereGeometry1" 
-                  Positions="{Binding Source={StaticResource  SphereGeometrySource1}, Path=Points}"
-                TriangleIndices="{Binding Source={StaticResource SphereGeometrySource1}, Path=TriangleIndices}"/>
-        </Grid.Resources>
+             HorizontalAlignment="Stretch" x:Name="Grid1"> 
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -36,33 +29,29 @@
                     HorizontalAlignment="Stretch" Name="Viewport1">
 
             <Viewport3D.Camera>
-                <PerspectiveCamera x:Name="myCamera" Position="100 60 0" 
-                      LookDirection="-50 -33 0" 
-                      UpDirection="0,1,0" FieldOfView="90"/>
-                <!--<OrthographicCamera x:Name="myCamera" 
-                      Position="200 0 0" LookDirection="-1 0 0" 
-                      Width="180" UpDirection="0,1,0"/>-->
+                <PerspectiveCamera Position="-6 0.2 0"
+                                   LookDirection="1 0 0"
+                                   UpDirection="0 1 0"/>
             </Viewport3D.Camera>
+
             <ModelVisual3D>
                 <ModelVisual3D.Content>
                     <Model3DGroup>
-                        <DirectionalLight Color="#FFFFFF" 
-                                 Direction="0 -30 0" />
-                        <DirectionalLight Color="#FFFFFF" 
-                                 Direction="0 +30 0" />
-                        <GeometryModel3D 
-                               Geometry="{StaticResource SphereGeometry1}">
+                        <GeometryModel3D x:Name="globeModel">
                             <GeometryModel3D.Material>
                                 <DiffuseMaterial>
                                     <DiffuseMaterial.Brush>
-                                        <SolidColorBrush Color="AliceBlue"/>
+                                        <!--<ImageBrush TileMode="Tile" ImageSource="/Views/eye2.png" />-->
+                                        <ImageBrush Stretch="Fill" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="Absolute" TileMode="Tile" ImageSource="\Views\eye2.png" AlignmentY="Top" AlignmentX="Left"/>
                                     </DiffuseMaterial.Brush>
                                 </DiffuseMaterial>
                             </GeometryModel3D.Material>
                         </GeometryModel3D>
+
+                        <AmbientLight Color="White" />
+
                     </Model3DGroup>
                 </ModelVisual3D.Content>
-
                 <ModelVisual3D.Transform>
                     <RotateTransform3D>
                         <RotateTransform3D.Rotation>

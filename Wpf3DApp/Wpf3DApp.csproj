@@ -8,13 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ear0xuu2.jpg" />
     <None Remove="Images\eye.jpg" />
+    <None Remove="Views\ear0xuu2.jpg" />
+    <None Remove="Views\eye.jpg" />
+    <None Remove="Views\eye2.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\ear0xuu2.jpg" />
     <Resource Include="Images\eye.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Views\ear0xuu2.jpg" />
+    <Resource Include="Views\eye.jpg" />
+    <Resource Include="Views\eye2.png" />
   </ItemGroup>
 
   <ItemGroup>
