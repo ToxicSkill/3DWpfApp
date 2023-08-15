@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Wpf3DApp.ViewModels
 {
@@ -21,7 +21,7 @@ namespace Wpf3DApp.ViewModels
 
         public ContentViewModel()
         {
-            axisItemsSource = new List<string>()
+            AxisItemsSource = new List<string>()
             {
                 "0 0 1",
                 "1 0 0",
@@ -31,10 +31,10 @@ namespace Wpf3DApp.ViewModels
                 "0 1 1",
                 "1 1 1"
             };
+            SelectedAxis = AxisItemsSource.First();
         }
 
-        [RelayCommand]
-        private void Select()
+        partial void OnSelectedAxisChanged(string value)
         {
             AxisRotation = SelectedAxis;
         }

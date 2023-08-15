@@ -29,9 +29,8 @@
                     HorizontalAlignment="Stretch" Name="Viewport1">
 
             <Viewport3D.Camera>
-                <PerspectiveCamera Position="-6 0.2 0"
-                                   LookDirection="1 0 0"
-                                   UpDirection="0 1 0"/>
+                <PerspectiveCamera Position="0 0 10" 
+                                   LookDirection="0 0 -1"/>
             </Viewport3D.Camera>
 
             <ModelVisual3D>
@@ -40,9 +39,8 @@
                         <GeometryModel3D x:Name="globeModel">
                             <GeometryModel3D.Material>
                                 <DiffuseMaterial>
-                                    <DiffuseMaterial.Brush>
-                                        <!--<ImageBrush TileMode="Tile" ImageSource="/Views/eye2.png" />-->
-                                        <ImageBrush Stretch="Fill" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="Absolute" TileMode="Tile" ImageSource="/Images/generated.png" AlignmentY="Top" AlignmentX="Left"/>
+                                    <DiffuseMaterial.Brush> 
+                                        <ImageBrush TileMode="Tile" ImageSource="/Images/generated.png"/>
                                     </DiffuseMaterial.Brush>
                                 </DiffuseMaterial>
                             </GeometryModel3D.Material>
@@ -61,14 +59,38 @@
                 </ModelVisual3D.Transform>
             </ModelVisual3D>
         </Viewport3D>
-        <Slider Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" Maximum = "360" 
-         Value = "{Binding ElementName = rotate, Path=Angle}" />
-        <ComboBox Grid.Column="1" Grid.Row="1" Margin="0,30" Width="200" 
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+            <Slider VerticalAlignment="Top" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="X" FontSize="32"/>
+                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Y" FontSize="32"/>
+                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Z" FontSize="32"/>
+                <Slider Grid.Column="1" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Maximum = "360"  Value = "{Binding ElementName = rotate, Path=Angle}" />
+            </Grid>
+            <ComboBox Grid.Column="1" Grid.Row="1" Margin="0,30" Width="200" 
                   ItemsSource="{Binding AxisItemsSource, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                   SelectedItem="{Binding SelectedAxis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                   VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-        <ui:Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Height="35" Width="120" Command="{Binding SelectCommand}" Content="Select" Margin="410, 30,0,0"/>
 
+        </StackPanel>
 
     </Grid>
 
