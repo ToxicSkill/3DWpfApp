@@ -1,7 +1,7 @@
 ﻿using System;
 using Wpf.Ui.Mvvm.Contracts;
 
-namespace MvvmFluentDIApp.Interfaces
+namespace Wpf3DApp.Interfaces
 {
     public interface ICustomPageService : IPageService
     {

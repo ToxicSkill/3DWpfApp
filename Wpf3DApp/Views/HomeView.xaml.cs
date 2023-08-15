@@ -1,7 +1,7 @@
-﻿using MvvmFluentDIApp.ViewModels;
+﻿using Wpf3DApp.ViewModels;
 using Wpf.Ui.Common.Interfaces;
 
-namespace MvvmFluentDIApp.Views
+namespace Wpf3DApp.Views
 {
     /// <summary>
     /// Interaction logic for Dashboard.xaml

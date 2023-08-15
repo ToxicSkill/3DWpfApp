@@ -2,7 +2,7 @@
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
-namespace MvvmFluentDIApp.Models
+namespace Wpf3DApp.Models
 {
     public abstract class RoundMesh3D
     {

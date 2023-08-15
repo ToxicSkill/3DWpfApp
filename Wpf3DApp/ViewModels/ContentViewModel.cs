@@ -2,7 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.Generic;
 
-namespace MvvmFluentDIApp.ViewModels
+namespace Wpf3DApp.ViewModels
 {
     public partial class ContentViewModel : ObservableObject
     {

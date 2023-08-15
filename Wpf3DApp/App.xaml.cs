@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MvvmFluentDIApp.Interfaces;
-using MvvmFluentDIApp.Services;
-using MvvmFluentDIApp.ViewModels;
-using MvvmFluentDIApp.Views;
+using Wpf3DApp.Interfaces;
+using Wpf3DApp.Services;
+using Wpf3DApp.ViewModels;
+using Wpf3DApp.Views;
 using System.Windows;
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Services;
 
-namespace MvvmFluentDIApp
+namespace Wpf3DApp
 {
     public partial class App : Application
     {

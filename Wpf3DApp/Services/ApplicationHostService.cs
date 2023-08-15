@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Hosting;
-using MvvmFluentDIApp.Interfaces;
-using MvvmFluentDIApp.Views;
+using Wpf3DApp.Interfaces;
+using Wpf3DApp.Views;
 using System;
 using System.Linq;
 using System.Threading;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Wpf.Ui.Mvvm.Contracts;
 
-namespace MvvmFluentDIApp.Services;
+namespace Wpf3DApp.Services;
 
 public class ApplicationHostService : IHostedService
 {

@@ -1,12 +1,12 @@
-﻿using MvvmFluentDIApp.Interfaces;
-using MvvmFluentDIApp.ViewModels;
+﻿using Wpf3DApp.Interfaces;
+using Wpf3DApp.ViewModels;
 using System;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
 
-namespace MvvmFluentDIApp
+namespace Wpf3DApp
 {
     public partial class MainWindow : INavigationWindow
     {

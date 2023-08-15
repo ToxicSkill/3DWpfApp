@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MvvmFluentDIApp.Views;
+using Wpf3DApp.Views;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
@@ -9,7 +9,7 @@ using Wpf.Ui.Controls;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Controls.Navigation;
 
-namespace MvvmFluentDIApp.ViewModels
+namespace Wpf3DApp.ViewModels
 {
     public partial class MainWindowViewModel : ObservableObject
     {

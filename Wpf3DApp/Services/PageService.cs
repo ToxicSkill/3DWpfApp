@@ -1,9 +1,9 @@
-﻿using MvvmFluentDIApp.Interfaces;
+﻿using Wpf3DApp.Interfaces;
 using System;
 using System.Diagnostics;
 using System.Windows;
 
-namespace MvvmFluentDIApp.Services;
+namespace Wpf3DApp.Services;
 
 public class PageService : ICustomPageService
 {

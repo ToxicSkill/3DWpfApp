@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace MvvmFluentDIApp.ViewModels
+namespace Wpf3DApp.ViewModels
 {
     public partial class HomeViewModel : ObservableObject
     {
