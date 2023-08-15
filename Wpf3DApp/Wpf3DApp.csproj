@@ -8,21 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\ear0xuu2.jpg" />
     <None Remove="Images\eye.jpg" />
-    <None Remove="Views\ear0xuu2.jpg" />
-    <None Remove="Views\eye.jpg" />
-    <None Remove="Views\eye2.png" />
+    <None Remove="Images\generated.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\ear0xuu2.jpg" />
-    <Resource Include="Images\eye.jpg">
+    <Content Include="Images\generated.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Views\ear0xuu2.jpg" />
-    <Resource Include="Views\eye.jpg" />
-    <Resource Include="Views\eye2.png" />
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\eye.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +29,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+    <PackageReference Include="OpenCvSharp4" Version="4.8.0.20230708" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.8.0.20230708" />
     <PackageReference Include="WPF-UI" Version="2.0.3" />
   </ItemGroup>
 

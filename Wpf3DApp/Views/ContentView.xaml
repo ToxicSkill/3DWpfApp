@@ -42,7 +42,7 @@
                                 <DiffuseMaterial>
                                     <DiffuseMaterial.Brush>
                                         <!--<ImageBrush TileMode="Tile" ImageSource="/Views/eye2.png" />-->
-                                        <ImageBrush Stretch="Fill" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="Absolute" TileMode="Tile" ImageSource="\Views\eye2.png" AlignmentY="Top" AlignmentX="Left"/>
+                                        <ImageBrush Stretch="Fill" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="Absolute" TileMode="Tile" ImageSource="/Images/generated.png" AlignmentY="Top" AlignmentX="Left"/>
                                     </DiffuseMaterial.Brush>
                                 </DiffuseMaterial>
                             </GeometryModel3D.Material>

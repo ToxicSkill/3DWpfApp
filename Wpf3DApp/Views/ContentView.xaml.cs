@@ -6,6 +6,7 @@ using System.Windows;
 using System.Drawing;
 using Point = System.Windows.Point;
 using System.Windows.Media;
+using OpenCvSharp;
 
 namespace Wpf3DApp.Views
 {
@@ -24,6 +25,7 @@ namespace Wpf3DApp.Views
             ViewModel = viewModel;
             InitializeComponent();
             DataContext = ViewModel;
+            GenerateImage();
             globeModel.Geometry = GenerateSphere(new Point3D(), 1, 360, 180); 
         } 
         MeshGeometry3D GenerateSphere(Point3D center, double radius,
@@ -80,6 +82,24 @@ namespace Wpf3DApp.Views
             double z = scale * Math.Cos(theta);
 
             return new Point3D(x, y, z);
+        }
+
+        private void GenerateImage()
+        {
+            using var mat = new Mat(new OpenCvSharp.Size(1400, 670), MatType.CV_8UC3, new Scalar(205, 213, 220));
+            using var center =  Cv2.ImRead("Images\\eye.jpg");
+            var centerX = center.Width / 2;
+            var centerY = center.Height / 2;
+            var min = Math.Min(centerX, centerY);
+            var X = centerX - min;
+            var Y = centerY - min;
+            using var centerCut = new Mat(center, new OpenCvSharp.Rect(X, Y, 2 * min, 2 * min));
+            Cv2.Resize(centerCut, centerCut, new OpenCvSharp.Size(centerCut.Width / 4, centerCut.Height / 4));
+            var x = mat.Width / 2 - centerCut.Width / 2;
+            var y = mat.Height / 2 - centerCut.Height / 2;
+            var matRoi = new Mat(mat, new OpenCvSharp.Rect(x, y, centerCut.Width, centerCut.Height));
+            centerCut.CopyTo(matRoi);
+            Cv2.ImWrite("Images\\generated.png", mat);
         }
     }
 }
